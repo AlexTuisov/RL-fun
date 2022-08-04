@@ -16,6 +16,7 @@ class RandomAgent(Agent):
     def act(self, state, reward):
         return np.random.randint(self.num_of_actions)
 
+
 class DQNAgent(Agent):
     def __init__(self, network, optimizer, size_of_buffer, batch_size):
         self.network = network
