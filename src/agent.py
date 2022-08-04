@@ -1,5 +1,6 @@
 from abc import ABC, abstractmethod
 from replay_buffer import ReplayBuffer
+import numpy as np
 
 
 class Agent(ABC):
@@ -9,8 +10,11 @@ class Agent(ABC):
 
 
 class RandomAgent(Agent):
-    pass
+    def __init__(self, num_of_actions: int):
+        self.num_of_actions = num_of_actions
 
+    def act(self, state, reward):
+        return np.random.randint(self.num_of_actions)
 
 class DQNAgent(Agent):
     def __init__(self, network, optimizer, size_of_buffer, batch_size):
