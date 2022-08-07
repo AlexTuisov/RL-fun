@@ -21,9 +21,9 @@ class RandomAgent(Agent):
 
 class DQNAgent(Agent):
     """
-    Base Agent class handling the interaction with the environment
+    Agent class using neural net to represent Q-values
     Args:
-        env: training environment
+        net: underlying neural model
         replay_buffer: replay buffer storing experiences
     """
 

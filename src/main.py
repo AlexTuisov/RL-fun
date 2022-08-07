@@ -1,11 +1,11 @@
 import gym
 from agent import RandomAgent
-from stable_baselines3.common.env_util import AtariWrapper
+from wrappers import wrap_deepmind
 from pl_bolts.models.rl import DQN
 
 def main():
     env = gym.make("Atlantis-v4")
-    env = AtariWrapper(env)
+    env = wrap_deepmind(env)
     observation = env.reset()
     done = False
     agent = RandomAgent(env.action_space.n)

@@ -31,7 +31,7 @@ class ReplayBuffer:
             A list of examples including (state, action, reward, terminal, next_state)
         """
         idxs = np.choice(np.arange(len(self.buffer)), size=self.minibatch_size)
-        return [self.buffer[id] for id in idxs]
+        return [self.buffer[idx] for idx in idxs]
 
     def size(self):
         return len(self.buffer)
